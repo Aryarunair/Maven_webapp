@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout'){
+            steps{
+                checkout scm
+            }
+        }
+            
         stage('GitHub Stage') {
             steps {
                 git branch: 'main', credentialsId: 'PAT-JENKINS', url: 'https://github.com/Aryarunair/Maven_webapp.git'
